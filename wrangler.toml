@@ -1,3 +1,14 @@
 name = "my-portfolio"
-pages_build_output_dir = "./dist"
 compatibility_date = "2025-09-18"
+
+# Build the Vite site before deploying so ./dist exists in CI.
+# Wrangler runs this command before `wrangler deploy`.
+[build]
+command = "npm run build"
+
+# Deploy the built SPA as a Workers static-assets site.
+# `not_found_handling = "single-page-application"` serves index.html for
+# client-side routes so deep links don't 404.
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
