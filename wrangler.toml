@@ -1,4 +1,4 @@
-name = "my-portfolio"
+name = "qr-page"
 compatibility_date = "2025-09-18"
 
 # Custom domain. Requires the `platour.net` zone to be in this Cloudflare
