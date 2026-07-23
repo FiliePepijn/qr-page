@@ -1,6 +1,12 @@
 name = "my-portfolio"
 compatibility_date = "2025-09-18"
 
+# Custom domain. Requires the `platour.net` zone to be in this Cloudflare
+# account; Cloudflare provisions the DNS record + TLS cert automatically.
+routes = [
+  { pattern = "me.platour.net", custom_domain = true }
+]
+
 # Build the Vite site before deploying so ./dist exists in CI.
 # Wrangler runs this command before `wrangler deploy`.
 [build]
